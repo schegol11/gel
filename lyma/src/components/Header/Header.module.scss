@@ -1,0 +1,65 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400&display=swap');
+
+$font-main: 'Montserrat', sans-serif;
+$color-gray: #888;
+$color-black: #000;
+$color-white: #fff;
+
+@mixin text-style($size, $weight) {
+  font: {
+    family: $font-main;
+    size: $size;
+    weight: $weight;
+  }
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 30px 40px;
+  @include text-style(10px, 300);
+  color: $color-gray;
+
+  .left,
+  .right {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+
+    a {
+      color: $color-gray;
+      text-decoration: none;
+      @include text-style(10px, 300);
+
+      @media (max-width: 900px) {
+        font-size: 8px;
+      }
+    }
+  }
+
+  .logo {
+    height: 20px;
+  }
+
+  .buy {
+    background: $color-black;
+    color: $color-white;
+    border: none;
+    padding: 10px 25px;
+    cursor: pointer;
+    @include text-style(12px, 300);
+
+    @media (max-width: 900px) {
+      padding: 8px 15px;
+      font-size: 10px;
+    }
+  }
+
+  @media (max-width: 900px) {
+    padding: 20px;
+    gap: 15px;
+  }
+}

@@ -1,0 +1,53 @@
+$font-main: 'Montserrat', sans-serif;
+
+@mixin text-style($size) {
+  font: { family: $font-main; size: $size; weight: 400; }
+}
+
+.section6 {
+  display: flex;
+  justify-content: center;
+  gap: 60px;
+  padding: 80px 0;
+  background: #fff;
+  overflow: hidden; 
+
+  @media (max-width: 1024px) {
+    gap: 30px;
+  }
+
+  .item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+    width: 250px; 
+    flex-shrink: 0;
+
+    @media (max-width: 768px) {
+      width: 200px;
+    }
+
+    p {
+      @include text-style(13px);
+      line-height: 1.6;
+      text-align: center;
+      color: #333;
+    }
+
+    img {
+      height: 30px;
+      object-fit: contain;
+    }
+  }
+
+  .cut {
+    width: 200px;
+    opacity: 0.4; 
+    
+    @media (max-width: 768px) {
+      display: none;
+    }
+  }
+}
